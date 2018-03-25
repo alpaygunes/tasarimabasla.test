@@ -560,6 +560,35 @@
               <div class="help-block" id="recurring-description"></div>
             </div>
           <?php } ?>
+
+
+            <!-------------------                 alpaygunes -------------------------- -->
+            <button type="button" id="kendin-tasarla" style="margin: 10px;display: none"
+                    data-loading-text="<?php echo $text_loading; ?>"
+                    class="btn btn-primary btn-lg btn-block">
+              Kendin Tasarla
+            </button>
+            <!-------------------                 alpaygunes -------------------------- -->
+            <table>
+              <tr>
+                <td>
+                  <!--      -------------------  alpaygunes       -->
+                  <div id="tasarim-onay-alani" style="display: none">
+                    <input type="checkbox"  id="tasarim-onay" checked>
+                    <lable for="tasarim_onay" id="tasarim-onay-label">
+                      Tasarımın istediğim gibi olduğunu gördüm ve kabul ettim.
+                    </lable>
+                  </div>
+                  <input type="hidden" name="iceriklerArr" id="iceriklerArr" >
+                  <!--      -------------------  alpaygunes       -->
+                </td>
+              </tr>
+            </table>
+
+
+
+
+
             <div class="form-group cart <?php echo isset($labels) && is_array($labels) && isset($labels['outofstock']) ? 'outofstock' : ''; ?>">
               <div>
               <?php if($this->journal2->settings->get('hide_add_to_cart_button')): ?>
@@ -921,6 +950,9 @@ $('#button-cart').on('click', function() {
                 }
 
 				$('#cart-total').html(json['total']);
+                //-----------------alpaygunes
+                window.location.href ="index.php?route=checkout/cart";
+                //--------------
 
           if (Journal.scrollToTop) {
               $('html, body').animate({ scrollTop: 0 }, 'slow');
