@@ -20,8 +20,7 @@ class ModelCheckoutOrder extends Model {
 				price = '" . (float)$product['price'] . "', 
 				total = '" . (float)$product['total'] . "', 
 				tax = '" . (float)$product['tax'] . "', 
-				reward = '" . (int)$product['reward'] . "', 
-				iceriklerArr = '" . $this->db->escape($product['iceriklerArr']) .  "'");
+				reward = '" . (int)$product['reward'] . "', iceriklerArr = '" . $this->db->escape($product['iceriklerArr']) .  "'");
 
                 $order_product_id = $this->db->getLastId();
 
