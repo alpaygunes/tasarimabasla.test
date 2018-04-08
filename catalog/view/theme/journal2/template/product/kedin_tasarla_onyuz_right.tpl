@@ -57,7 +57,7 @@
                                 line-height: 20px!important;
                                 padding: 2px!important"   data-dismiss="modal"  class="btn btn-primary pull-right editor-kaydet" data-dismiss="modal">Kaydet</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="max-height:1000px!important">
                 <!-- TUVAL ALANI ------------------------- -->
                 <div id="editor-canvas">
 
