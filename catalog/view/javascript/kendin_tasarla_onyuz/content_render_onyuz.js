@@ -347,7 +347,7 @@ function resimEklemeDugmeleriniOlustur( iceriklerArr,etiketler ){
                     "<tr>" +
                     "<td colspan='3' >" +
                     "<input type=\"checkbox\" "+ icerik.istemiyorum_chck +"  id=\"chckbox"+icerik.id+"\" hedef=\""+icerik.id+"\" class=\"resim-eklemek-istemiyorum\" >" +
-                    "<label for=\"yok"+icerik.id+"\">Resim eklemek istemiyorum</lable>"+
+                    "<label for=\"chckbox"+icerik.id+"\">Resim eklemek istemiyorum</lable>"+
                     "</td>"+
                     "</tr>";
                 $('#'+etiketler).append($tr);
@@ -974,7 +974,7 @@ function etiketAlaniniOlustur(iceriklerArr,etiketler) {
                     "<tr >" +
                     "<td colspan='3'>" +
                     "<input type=\"checkbox\" "+  icerik.istemiyorum_chck  +" id=\"chckbox"+icerik.id+"\" hedef=\""+icerik.id+"\" class=\"yazi-eklemek-istemiyorum\" >" +
-                    "<label  for=\"yok"+icerik.id+"\">Yazı eklemek istemiyorum</lable>"+
+                    "<label  for=\"chckbox"+icerik.id+"\">Yazı eklemek istemiyorum</lable>"+
                     "</td>"
                     "</tr>";
                 $('#'+etiketler).append($tr);
@@ -1011,7 +1011,7 @@ function etiketAlaniniOlustur(iceriklerArr,etiketler) {
                     "<tr >" +
                     "<td colspan='3'>" +
                     "<input type=\"checkbox\" "+  icerik.istemiyorum_chck  +" id=\"chckbox"+icerik.id+"\" hedef=\""+icerik.id+"\" class=\"yazi-eklemek-istemiyorum\" >" +
-                    "<label  for=\"yok"+icerik.id+"\">Yazı eklemek istemiyorum</lable>"+
+                    "<label  for=\"chckbox"+icerik.id+"\">Yazı eklemek istemiyorum</lable>"+
                     "</td>"
                 "</tr>";
                 $('#'+etiketler).append($tr);
@@ -1139,6 +1139,7 @@ var editor_hedef_txt_id;// düzenleme düğmesine tıklalan text kutunun id si
 var intervalID ;
 var konum_degisti;//herhangi bir nesnenin konumu değişirse mouseout un işlmeisi için.. Yoksa sürekli işliyor
 $(document).ready(function() {
+    fontListesiniYenidenAnlandir();
     // Editör ekranını modal olarak açalım
     $('#etiketler').on('click','.yazilariDuzenle',function () {
         $('#txtFontRenkKonumModal').modal('show');
@@ -1153,7 +1154,7 @@ $(document).ready(function() {
             $('#editor-canvas #'+editor_hedef_txt_id).css('border','#00FF00 solid 1px');
             Duzenleniyor = true;
         })
-        fontListesiniYenidenAnlandir();
+
         hedefKutUdakiYaziyaGoreFontKutusunuYenile()
         $('#txtFontRenkKonumModal').on('hidden.bs.modal', function () {
             Duzenleniyor = false;
